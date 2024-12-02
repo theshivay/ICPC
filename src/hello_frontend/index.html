@@ -1,17 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>IC Hello Starter</title>
-  <base href="/" />
-  <link rel="icon" href="/favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceX Cool Elements</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #0b3d91, #1e3a8a, #0a1128);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      overflow: hidden;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      background: linear-gradient(90deg, #ff5f6d, #ffc371);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textGlow 1.5s ease-in-out infinite;
+    }
+
+    @keyframes textGlow {
+      0%, 100% { text-shadow: 0 0 5px #ff5f6d, 0 0 10px #ffc371; }
+      50% { text-shadow: 0 0 20px #ff5f6d, 0 0 30px #ffc371; }
+    }
+
+    .button {
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: #fff;
+      background: linear-gradient(90deg, #ff8c00, #ff0080);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 140, 0, 0.8);
+    }
+
+    .rocket {
+      width: 150px;
+      animation: rocketMove 4s infinite ease-in-out;
+    }
+
+    @keyframes rocketMove {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+  </style>
 </head>
-
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <div class="container">
+    <h1>Explore the Universe</h1>
+    <img src="https://www.spacex.com/static/images/share.jpg" alt="Rocket" class="rocket">
+    <button class="button" onclick="alert('Ready for launch!')">Launch Now</button>
+  </div>
+  <div class="footer">© 2024 Space Adventures</div>
 </body>
-
 </html>
